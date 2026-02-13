@@ -1,4 +1,4 @@
-# certbun [Deprecated]
+# certbun
 
 Please note, this module is now in deprecated status. It is provided as-is as an example of how to use the Porkbun API to download and install a SSL certificate, but is no longer maintained.
 
@@ -38,4 +38,4 @@ If you've never done this before, you may want to read a guide on how to do it.
 
 Assuming you wanted certbun to run once per week, you'd add a line like:
 
-	23 1 * * 1 python /path/to/certbun.py /path/to/config.json | logger
+	0 3 * * 1 cd /var/git/certbun && /usr/bin/python3 certbun.py config.json >> /var/git/certbun/cron.log 2>&1
