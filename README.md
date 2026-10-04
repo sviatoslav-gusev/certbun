@@ -4,9 +4,12 @@ Porkbun's minimalist Certbot alternative leaves the certificate generation to Po
 
 ## howto
 
-* mkdir ```/opt/certbun```
-* mkdir ```/opt/certbun/certs```
+* ```sudo mkdir -p /opt/certbun/certs```
 * Put ```certbun.py``` and ```config.json``` to ```/opt/certbun```
 * Adjust ```config.json```
 * Check if ```sudo python3 /opt/certbun/certbun.py /opt/certbun/config.json``` works
-* Put ```cronline.txt``` to ```/etc/cron.d```
+* Run ```echo -e "CRON_TZ=Europe/Moscow\n0 */12 * * * root test -f /opt/certbun/certbun.py && perl -e 'sleep int(rand(600))' && /usr/bin/python3 /opt/certbun/certbun.py /opt/certbun/config.json\n" | sudo tee /etc/cron.d/certbun > /dev/null```
+to create taskfile for cron
+
+You can lookup cron logs next day to look, how it works
+```sudo grep cron /var/log/syslog```
