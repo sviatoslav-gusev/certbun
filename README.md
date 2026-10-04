@@ -2,6 +2,10 @@
 
 Porkbun's minimalist Certbot alternative leaves the certificate generation to Porkbun and simply downloads certs to the location of your choosing, then reloads your web server with the command of your choosing.
 
+## killer feature
+
+You are independent from port 80 usage
+
 ## howto
 
 * ```sudo mkdir -p /opt/certbun/certs```
