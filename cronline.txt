@@ -1,0 +1,2 @@
+CRON_TZ=Europe/Moscow
+0 */12 * * * root test -f /opt/certbun/certbun.py && perl -e 'sleep int(rand(600))' && /usr/bin/python3 /opt/certbun/certbun.py /opt/certbun/config.json
