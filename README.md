@@ -9,11 +9,13 @@ You are independent from port 80 usage
 ## howto
 
 * ```sudo mkdir -p /opt/certbun/certs```
-* Put ```certbun.py``` and ```config.json``` to ```/opt/certbun```
+* Go ```/opt/certbun```
+* Put ```run.sh```, ```certbun.py``` and ```config.json``` there
+* ```chmod +x run.sh```
 * Adjust ```config.json```
-* Check if ```sudo python3 /opt/certbun/certbun.py /opt/certbun/config.json``` works
-* Run ```echo -e "CRON_TZ=Europe/Moscow\n0 */12 * * * root test -f /opt/certbun/certbun.py && perl -e 'sleep int(rand(600))' && /usr/bin/python3 /opt/certbun/certbun.py /opt/certbun/config.json\n" | sudo tee /etc/cron.d/certbun > /dev/null```
-to create taskfile for cron
+* Check if ```run.sh``` works. Adjust higher value of random to test
+  You can lookup results at ```/var/log/porkbun.log```
+* Add ```cronline.txt``` or ```cronline-dcron.txt``` content to your ```cron``` task
 
 ## results
 
@@ -21,4 +23,4 @@ In ```/opt/certbun/certs```
 
 ## monitoring
 
-You can lookup cron logs next day with ```sudo grep cron /var/log/syslog```
+You can lookup after ```/var/log/porkbun.log```
