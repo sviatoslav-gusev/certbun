@@ -13,8 +13,8 @@ You are independent from port 80 usage
 * Put ```run.sh```, ```certbun.py``` and ```config.json``` there
 * ```chmod +x run.sh```
 * Adjust ```config.json```
-* Check if ```run.sh``` works. Adjust higher value of random to test<br/>
-  You can lookup results at ```/var/log/porkbun.log```
+* Check if ```run.sh``` works.<br/>
+  Adjust higher value of random to test. You can lookup results at ```/var/log/porkbun.log```
 * Add ```cronline.txt``` or ```cronline-dcron.txt``` content to your ```cron``` task
 
 ## results
